@@ -1,0 +1,9 @@
+Level 4 to Level 5
+
+Goal: Find human-readable file
+Password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+Commands:
+cd inhere
+file ./*
+cat ./-file07
