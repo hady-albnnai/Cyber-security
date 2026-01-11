@@ -1,0 +1,9 @@
+Level 3 to Level 4
+
+Goal: Find hidden file
+Password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Commands:
+cd inhere
+ls -la
+cat .hidden
