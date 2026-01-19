@@ -1,30 +1,32 @@
 # Bandit Level 12 → Level 13
 
 ## Objective
-Decompress a repeatedly compressed and renamed file (`data.txt`) to retrieve the password.
+Recover a password from a file that has been compressed and archived multiple times with different methods.
 
-## Commands Used
-cd /tmp/bandit12_work
-cp ~/data.txt
-xxd -r data.txt > datafile
-file datafile
-mv datafile datafile.gz
-gzip -d datafile.gz
-file datafile
-mv datafile datafile.bz2
-bzip2 -d datafile.bz2
-file datafile
-mv datafile datafile.gz
-gzip -d datafile.gz
-file datafile
-tar -xf datafile
-file data5.bin
-tar -xf data5.bin
-file data6.bin
-mv data6.bin data6.bin.bz2
-bzip2 -d data6.bin.bz2
-file data6.bin
-cat data6.bin
+## Concepts Learned
+- Recognizing file types with the file command
+- Using xxd to revert a hexdump back to binary
+- Decompressing various formats: gzip ,bzip2, tar
+- Iterative problem‑solving: repeatedly decompressing until the plaintext is found
 
-## Password
-FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+## Tools & Commands Introduced
+- xxd – create or reverse a hex dump
+- file – determine file type
+- gzip / bzip2 – compress/decompress files
+- tar – archive utility
+
+## Approach
+1. Convert the provided hexdump back to a binary file.
+2. Identify the file type using file.
+3. Apply the appropriate decompression or extraction command based on the identified type.
+4. Repeat steps 2–3 until a human‑readable password file is obtained.
+
+## Example Workflow (Generic)
+xxd -r hexdump.txt > binary
+file binary
+# Based on output, decompress with gzip, bzip2, tar, etc.
+
+## Key Takeaway
+- Many file types have distinct "magic bytes" that file uses for identification.
+- Compression and archiving can be layered; patience and methodical checking are essential.
+- Working in a temporary directory (`/tmp`) keeps the home directory clean.
