@@ -1,9 +1,28 @@
-Level 4 to Level 5
+# Bandit Level 4 → Level 5
 
-Goal: Find human-readable file
+## Objective
+Identify the only human-readable file among a set of binary or non-text files.
 
-Commands:
-cd inhere
+## Concepts Learned
+- Distinguishing between human-readable text files and binary files
+- Using the file command to determine file type
+- Filtering and examining multiple files efficiently
+
+## Tools & Commands Introduced
+- file – determine file type by content
+- Wildcard (*) – operate on multiple files at once
+- Output redirection – manage command results
+
+## Approach
+1. Navigate to the target directory (inhere).
+2. Use file ./* to inspect the type of each file.
+3. Look for the file labeled as "ASCII text" or similar.
+4. Display its content.
+
+## Example Command
 file ./*
-cat ./-file07
-password : 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+cat ./the-readable-file
+
+## Key Takeaway
+- The file command is essential for understanding unknown file formats.
+- Automated inspection (via wildcards) speeds up analysis of multiple files.
