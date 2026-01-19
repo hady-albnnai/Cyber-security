@@ -1,11 +1,11 @@
-# Bandit Level 10 → Level 11
-
 ## Objective
-Decode the base64 encoded data in the file data.txt to readable text.
+Decode a base64‑encoded file.
 
-## Commands Used
-bandit10@bandit:~$ ls -la
-bandit10@bandit:~$ base64 -d data.txt
+## Commands Introduced
+base64 -d: – decode base64 data
 
-## Password
-dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+## Learned Concept
+Base64 is a common encoding for binary data in text formats.
+
+## Example Command
+base64 -d [file]
