@@ -1,0 +1,22 @@
+# Bandit Level 13 → Level 14
+
+## Objective
+Log into the server as bandit14 using the private SSH key found in the home directory.
+
+## Steps
+1. Identify the private key file:
+   ls -la
+
+2. Copy its content to a temporary file and set proper permissions:
+   cat sshkey.private > /tmp/mykey
+   chmod 600 /tmp/mykey
+
+3. Connect to localhost as bandit14 via SSH on port 2220 using the key:
+   ssh -i /tmp/mykey bandit14@localhost -p 2220
+
+4. After connection, retrieve the password for bandit14:
+   cat /etc/bandit_pass/bandit14
+
+## Notes
+- The private key must have 600 permissions for SSH to accept it.
+- Ignore warnings about known hosts if prompted.
