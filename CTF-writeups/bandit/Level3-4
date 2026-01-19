@@ -6,4 +6,7 @@ Password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 Commands:
 cd inhere
 ls -la
-cat .hidden
+cat ./...Hiding-From-You
+## Password
+
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
