@@ -1,11 +1,22 @@
 # Bandit Level 11 → Level 12
 
 ## Objective
-Decode the rot13 encoded text in the file data.txt.
+Decode a text file encoded with the ROT13 cipher.
 
-## Commands Used
+## Concept
+ROT13 is a simple letter‑substitution cipher that replaces each letter with the letter 13 positions ahead in the alphabet. It is its own inverse: applying ROT13 twice returns the original text.
 
-bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+## Tools & Commands Introduced
+- tr – translate or delete characters
+- Pipeline | – connect the output of one command to the input of another
 
-## Password
-7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+## Approach
+1. Read the encoded file.
+2. Apply the ROT13 substitution using tr with the appropriate character mapping.
+
+## Example Command
+cat encoded.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+## Key Takeaway
+- ROT13 is often used to obfuscate text without real security.
+- The tr command is useful for simple character‑by‑character transformations.
