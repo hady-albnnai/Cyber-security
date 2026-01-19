@@ -1,22 +1,27 @@
 # Bandit Level 13 → Level 14
 
 ## Objective
-Log into the server as bandit14 using the private SSH key found in the home directory.
+Authenticate via SSH using a provided private key instead of a password.
 
-## Steps
-1. Identify the private key file:
-   ls -la
+## Concepts Learned
+- SSH key‑based authentication
+- Private key file permissions and security (600)
+- Connecting to a local SSH service on a non‑standard port
 
-2. Copy its content to a temporary file and set proper permissions:
-   cat sshkey.private > /tmp/mykey
-   chmod 600 /tmp/mykey
+## Tools & Commands Introduced
+- ssh -i – specify an identity (private key) file
+- chmod 600 – restrict key file access to owner only
+- /etc/bandit_pass/ – system location storing level passwords
 
-3. Connect to localhost as bandit14 via SSH on port 2220 using the key:
-   ssh -i /tmp/mykey bandit14@localhost -p 2220
+## Approach
+1. Locate the private key file in the home directory.
+2. Copy the key to a temporary location and set secure permissions.
+3. Use the key to connect to localhost as the next user (bandit14)
+4. Retrieve the password for the current level from the standard path.
 
-4. After connection, retrieve the password for bandit14:
-   cat /etc/bandit_pass/bandit14
+## Example Command
+ssh -i private_key user@host -p port
 
-## Notes
-- The private key must have 600 permissions for SSH to accept it.
-- Ignore warnings about known hosts if prompted.
+## Key Takeaway
+- Private keys must be kept strictly readable only by the owner (chmod 600)
+- SSH key authentication is more secure and scalable than password‑based login.
