@@ -4,7 +4,7 @@
 Decode the rot13 encoded text in the file data.txt.
 
 ## Commands Used
-bandit11@bandit:~$ ls -la
+
 bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 
 ## Password
