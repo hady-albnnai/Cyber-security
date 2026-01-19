@@ -1,12 +1,27 @@
-Level 3 to Level 4
+# Bandit Level 3 → Level 4
 
-Goal: Find hidden file
-Password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+## Objective
+Find and read a hidden file inside a directory.
 
-Commands:
-cd inhere
+## Concepts Learned
+- Hidden files in Unix (prefixed with a dot .)
+- Using ls -la to list all files, including hidden ones
+- Navigating directories and reading file content
+
+## Tools & Commands Introduced
+- ls -la – list directory contents with details and hidden files
+- cat – display file content
+
+## Approach
+1. Move into the target directory (inhere).
+2. List all files, including hidden ones.
+3. Identify the hidden file (prefixed with .).
+4. Display its contents.
+
+## Example Command
 ls -la
-cat ./...Hiding-From-You
-## Password
+cat .hidden_filename
 
-2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+## Key Takeaway
+- Hidden files are a common way to store configuration or sensitive data.
+- Always use ls -la when searching for files, not just ls.
